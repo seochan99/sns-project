@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,13 +19,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-9@1ru4oa9poqcxd)gilc$@mr7kehoajd@42a&frx*p$!li_dl&'
+SECRET_KEY = 'django-insecure-^v8j@k2!4$i_=col(&+wbt_=6b8eyx*&&f=!k6t!)i%axj5m0$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
-
+ALLOWED_HOSTS = ["*"] #여기 있는 사람들만 이 파일에 들어올 수 있다..?
+#"*" 모든 사용자가 이용할 수 있도록 한다. 
 
 # Application definition
 
@@ -37,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main',
+    'main', #항상 , 끝을 내야지 추가로 데이터들을 붙이기 좋다 
 ]
 
 MIDDLEWARE = [
@@ -104,15 +103,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'ko-kr'
+LANGUAGE_CODE = 'ko-kr' #언어 설정
 
-TIME_ZONE = 'Asia/Seoul'
+TIME_ZONE = 'Asia/Seoul' #시간대 설정 
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = False
+USE_TZ = False #표준시간대(UTC)로 사용 ? 
 
 
 # Static files (CSS, JavaScript, Images)
