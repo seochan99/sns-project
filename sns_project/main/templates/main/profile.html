@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+    .blog{
+        text-align: center;
+        line-height: 1.2em;
+    }
+    .Blog_intro{
+    text-align: center;
+    font-size: 50px;
+    padding-bottom: 20px;
+    transform: translate(0,-5px);
+    }
+    .blog_title{
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 9px;
+    }
+    .blog a:link{
+        color: blue;
+    }
+    .blog a:hover{
+        color: black;
+    }
+    .blog a:active{
+        color: red;
+    }
+    .blog a:visited{
+      color : rgba(185, 221, 215, 0.5);
+
+}
+
+     
+</style>
+
+<nav class=nav>
+    <ul class="nav__list">
+        <li class="nav__btn"><a class="nav__link" href="{% url  'show' %}"><p></p><i class="fas fa-home fa-2x"></i></a></li>
+        <li class="nav__btn"><a class="nav__link" href="{% url 'introduceMe'%}"><i class="far fa-file fa-2x"></i></a></li>
+        <li class="nav__btn"><a class="nav__link" href="{% url 'photoMe'%}"><i class="far fa-image fa-2x"></i></a></li>
+        <li class="nav__btn"><a class="nav__link" href="{% url 'profileMe'%}"><i class="fas fa-user fa-2x"></i></a></li>
+    </ul>
+</nav>
+
+
+<body>
+    <h1 class= "Blog_intro" style="font-size: 40px; font-weight: 600;">Contact Or Blog</h1>
+    <section class="blog">
+        <h3 class="blog_title">블로그</h3>
+        <h2>네이버 : <a href="https://blog.naver.com/gmlcks0513" target="_blank">네이버 블로그로 바로가기</a></h2>
+        <h2>벨로그 : <a href="https://velog.io/@seochan99" target="_blank">벨로그로 바로가기</a> </h2>
+        <h2>티스토리 : <a href="https://chanscoding.tistory.com/" target="_blank">티스토리 바로가기</a></h2>
+        <h1 style="font-size:30px; padding: 15px;"> 그 외</h1>
+        <h2>깃허브 : <a href="https://github.com/seochan99" target="_blank">깃허브 바로가기</a></h2>
+        <h2>카카오톡 ID : 42yunh </h2>
+        <h2>인스타그램 : <a href="https://www.instagram.com/c_ha.snpas/" target="_blank">c_ha.snpas</a> </h2>
+        <h2 style="padding: 20px; font-size: 25px;">에서 활동중입니다 !</h2>
+        
+        
+        
+    </section>
+
+</body>
+{% endblock %}

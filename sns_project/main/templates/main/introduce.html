@@ -1,0 +1,54 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+    .farewell{
+        font-size: 30px;
+        margin-top: 15px;
+        font-weight: 600;
+    }
+</style>
+<nav class=nav>
+    <ul class="nav__list">
+        <li class="nav__btn"><a class="nav__link" href="{% url  'show' %}"><p></p><i class="fas fa-home fa-2x"></i></a></li>
+        <li class="nav__btn"><a class="nav__link" href="{% url 'introduceMe'%}"><i class="fas fa-file fa-2x"></i></a></li>
+        <li class="nav__btn"><a class="nav__link" href="{% url 'photoMe'%}"><i class="far fa-image  fa-2x"></i></a></li>
+        <li class="nav__btn"><a class="nav__link" href="{% url 'profileMe'%}"><i class="far fa-user fa-2x"></i></a></li>
+    </ul>
+</nav>
+<body>
+    <div class = "centerfor">
+    <header>
+        <div class="title text-flicker-in-glow" style="transform: translate(0,-20px);">
+            <h2>저를 소개합니다 !</h2>
+        </div>
+    </header>
+    <section class="">
+        <div class="name">
+            <span class="title_">이름 :<span>
+            <span class="self">서희찬</span>
+        </div>
+        <div class="age">
+            <span class="title_">나이 :<span>
+            <span class="self">23살</span>
+        </div>
+        <div class="department">
+            <span class="title_">전공/학번/학년 : <span>
+            <span class="self">멀티미디어 공학과/19학번/1학년</span>
+        </div>
+        <div class="introduce_me" style="line-height: 1.3em; padding-top: 37px;">
+            <span calss="me">안녕하세요 ! 독서와 헬스를 취미로 삼고 코딩은 공부중인 서희찬입니다.</br>저는 군대 전역을 한지 얼마안되어서 학교는 휴학상태중입니다.</br>저는 모든일에는 끝까지 !! 책임을 지는 성격이고, 한번 잡은 목표는 이루기위해 최선을 다하는 스타일입니다.</br>(그렇기에...수능도 3번쳤답니다..크흑 ㅠㅜㅋ)
+            </br>성격은 내성적이여서 낯을 많이 가리지만 친해진다면! 매우 외향적이게된답니다!!(아마도..아닐수도있습니다...)<br/>현재는 저의 꿈 졸업전에 스타트업을 시작하기 위해서 많은 것을 배우기 위해 멋쟁이사자처럼을 열심히 활동중입니다 ! </span>
+            
+        </div>
+        <div class="farewell">
+            <h2>감사합니다 !</br>m(_ _)m</h2>
+        </div>
+
+    </section>
+</div>
+
+</body>
+{% endblock %}

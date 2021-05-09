@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chans introduce</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<style>
+    body{
+       color:white;
+       background-image: url(https://res.allmacwallpaper.com/pic/Thumbnails/584_728.jpg);
+       background-size: 100%;
+   }
+    
+</style>
+<body class="body" style="background-color: whitesmoke;">
+    {% include "shared/statusbar.html" %}
+
+        {% block content %}
+
+        {% endblock %}
+
+    <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous">
+    </script>
+    
+</body>
+</html>

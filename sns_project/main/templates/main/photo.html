@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block content %}
+<style>
+    figcaption {
+  color: #fff;
+  background: rgba(121, 119, 119, 0.5);
+  padding: 1em;
+  line-height: 1;
+}
+figure {
+  margin: 0;
+  line-height: 0;
+}
+/* Alignment styles */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: system-ui;
+}
+* {
+  box-sizing: border-box;
+}
+</style>
+<nav class=nav>
+    <ul class="nav__list">
+        <li class="nav__btn"><a class="nav__link" href="{% url  'show' %}"><p></p><i class="fas fa-home fa-2x"></i></a></li>
+        <li class="nav__btn"><a class="nav__link" href="{% url 'introduceMe'%}"><i class="far fa-file fa-2x"></i></a></li>
+        <li class="nav__btn"><a class="nav__link" href="{% url 'photoMe'%}"><i class="fas fa-image fa-2x"></i></a></li>
+        <li class="nav__btn"><a class="nav__link" href="{% url 'profileMe'%}"><i class="far fa-user fa-2x"></i></a></li>
+    </ul>
+</nav>
+
+<section class="part1" style="text-align: center; ">
+    <div class="introduce_photo">
+        <p style="font-weight: 600; font-size: larger; transform: translate(0,-20px);">
+            저는 사진을 찍는것과 찍히는것을 되게 좋아하는데요!!!
+            <h1>그 중에서 저가 마음에 드는... 저의 사진과 예쁜 우리집 앞에 저의 갬성이 가득 담긴! 사진을 보여드릴께요 ! </h1>
+        </p>
+        <figure>
+            <img src="{%static 'images/me1.jpg' %}" height="200"; width="150" alt="으아" style="margin-top: 30px;">
+            <img src="{%static 'images/me6.jpg' %}" height="200"; width="150" alt="으어" style="margin-top: 30px;">
+            <img src="{%static 'images/me7.jpg' %}" height="200"; width="150" alt="집 앞" style="margin-top: 30px;">
+            <img src="{%static 'images/me4.jpg' %}" height="200"; width="150" alt="으어엉" style="margin-top: 30px;">
+            <img src="{%static 'images/me3.jpg' %}" height="200"; width="150" alt="가나다라" style="margin-top: 30px;">
+            <img src="{%static 'images/me2.jpg' %}" height="200"; width="150" alt="집 앞" style="margin-top: 30px;">
+            <figcaption>저의 사진과 집 앞!!(코시국 이라서 마스크쓴 사진밖에 없어서 아쉽네요 ㅠㅠ )</figcaption>
+          </figure>
+    </div>
+        
+</section>
+
+{% endblock %}
