@@ -48,7 +48,7 @@
 <body>
     <h1 class= "Blog_intro" style="font-size: 40px; font-weight: 600;">Contact Or Blog</h1>
     <section class="blog">
-        <h3 class="blog_title">블로그</h3>
+        <!-- <h3 class="blog_title">블로그</h3>
         <h2>네이버 : <a href="https://blog.naver.com/gmlcks0513" target="_blank">네이버 블로그로 바로가기</a></h2>
         <h2>벨로그 : <a href="https://velog.io/@seochan99" target="_blank">벨로그로 바로가기</a> </h2>
         <h2>티스토리 : <a href="https://chanscoding.tistory.com/" target="_blank">티스토리 바로가기</a></h2>
@@ -56,7 +56,23 @@
         <h2>깃허브 : <a href="https://github.com/seochan99" target="_blank">깃허브 바로가기</a></h2>
         <h2>카카오톡 ID : 42yunh </h2>
         <h2>인스타그램 : <a href="https://www.instagram.com/c_ha.snpas/" target="_blank">c_ha.snpas</a> </h2>
-        <h2 style="padding: 20px; font-size: 25px;">에서 활동중입니다 !</h2>
+        <h2 style="padding: 20px; font-size: 25px;">에서 활동중입니다 !</h2> -->
+
+        <h2 style="font-size: 30px; font-weight: 600; margin: 20px;"><a href="{%url 'new'%}">글쓰기</a></h2>
+        <h1 style="font-size: 20px; font-weight: 600;">글 목록</h1>
+        <br>
+        <div>   
+            {% for post in posts%}
+            <div>
+                <h3>{{post.title}}</h3>
+                {{post.writer}}<br>
+                {{post.summary}}<br>
+                <a href="{% url 'detail' post.id %}">....자세히</a>
+                <br>
+            </div>
+            <br>
+            {% endfor %}
+        </div>
         
         
         

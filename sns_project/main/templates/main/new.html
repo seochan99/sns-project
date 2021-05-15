@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- <nav class=nav>
+    <ul class="nav__list">
+        <li class="nav__btn"><a class="nav__link" href="{% url  'show' %}"><p></p><i class="fas fa-home fa-2x"></i></a></li>
+        <li class="nav__btn"><a class="nav__link" href="{% url 'introduceMe'%}"><i class="far fa-file fa-2x"></i></a></li>
+        <li class="nav__btn"><a class="nav__link" href="{% url 'photoMe'%}"><i class="far fa-image fa-2x"></i></a></li>
+        <li class="nav__btn"><a class="nav__link" href="{% url 'profileMe'%}"><i class="far fa-user fa-2x"></i></a></li>
+    </ul>
+</nav> -->
+<form action="{%url 'create' %}" method="post">
+{% csrf_token %}
+ <!-- post방식 사용시 값이 매번 변경 되는 토근 발행 ->csrf방어 -->
+ 
+ <p>제목 : <input type="text" name="title"></p>
+ <p>작성자 : <input type="text" name="writer"></p>
+ <p>내용 : <textarea type="text" name="body" id="" cols="20" rows="5"></textarea></p>
+ <button type="submit">제출</button>
+</form>
+
+{% endblock %}
