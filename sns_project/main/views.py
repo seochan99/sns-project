@@ -36,3 +36,22 @@ def create(request):
     new_post.body = request.POST['body']
     new_post.save()
     return redirect('detail',new_post.id)   
+
+def edit(request, id):
+    edit_blog = Post.objects.get(id=id)
+    return render(request,"main/edit.html",{"Post":edit_Post})
+
+def update(request,id):
+    update_Post = Post.objects.get(id=id)
+    update_Post.title = request.POST['title']
+    update_Post.writer = request.POST['writer']
+    update_Post.pub_date = timezone.now()
+    update_Post.body = request.POST['body']
+    update_Post.image = request.FILES['image']
+    update_Post.save()
+    return redirect('main:detail', update_Post.id)
+
+def delete(request, id):
+    delete_Post = Post.objects.get(id=id) #모든 객체 가지고온다 
+    delete_Post.delete() ## 삭제 ~ 
+    return redirect("main:posts") #삭제후 보여지는 페이지 이동 

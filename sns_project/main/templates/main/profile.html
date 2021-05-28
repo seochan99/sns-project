@@ -37,10 +37,10 @@
 
 <nav class=nav>
     <ul class="nav__list">
-        <li class="nav__btn"><a class="nav__link" href="{% url  'show' %}"><p></p><i class="fas fa-home fa-2x"></i></a></li>
-        <li class="nav__btn"><a class="nav__link" href="{% url 'introduceMe'%}"><i class="far fa-file fa-2x"></i></a></li>
-        <li class="nav__btn"><a class="nav__link" href="{% url 'photoMe'%}"><i class="far fa-image fa-2x"></i></a></li>
-        <li class="nav__btn"><a class="nav__link" href="{% url 'profileMe'%}"><i class="fas fa-user fa-2x"></i></a></li>
+        <li class="nav__btn"><a class="nav__link" href="{% url  'main:show' %}"><p></p><i class="fas fa-home fa-2x"></i></a></li>
+        <li class="nav__btn"><a class="nav__link" href="{% url 'main:introduceMe'%}"><i class="far fa-file fa-2x"></i></a></li>
+        <li class="nav__btn"><a class="nav__link" href="{% url 'main:photoMe'%}"><i class="far fa-image fa-2x"></i></a></li>
+        <li class="nav__btn"><a class="nav__link" href="{% url 'main:profileMe'%}"><i class="fas fa-user fa-2x"></i></a></li>
     </ul>
 </nav>
 
@@ -58,7 +58,7 @@
         <h2>인스타그램 : <a href="https://www.instagram.com/c_ha.snpas/" target="_blank">c_ha.snpas</a> </h2>
         <h2 style="padding: 20px; font-size: 25px;">에서 활동중입니다 !</h2> -->
 
-        <h2 style="font-size: 30px; font-weight: 600; margin: 20px;"><a href="{%url 'new'%}">글쓰기</a></h2>
+        <h2 style="font-size: 30px; font-weight: 600; margin: 20px;"><a href="{%url 'main:new'%}">글쓰기</a></h2>
         <h1 style="font-size: 20px; font-weight: 600;">글 목록</h1>
         <br>
         <div>   
@@ -67,7 +67,7 @@
                 <h3>{{post.title}}</h3>
                 {{post.writer}}<br>
                 {{post.summary}}<br>
-                <a href="{% url 'detail' post.id %}">....자세히</a>
+                <a href="{% url 'main:detail' post.id %}">....자세히</a>
                 <br>
             </div>
             <br>
