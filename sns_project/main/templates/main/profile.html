@@ -64,9 +64,9 @@
         <div>   
             {% for post in posts%}
             <div>
-                <h3>{{post.title}}</h3>
-                {{post.writer}}<br>
-                {{post.summary}}<br>
+                <h3>제목 : {{post.title}}</h3>
+                작성자 : {{post.writer}}<br>
+                내용 : {{post.summary}}
                 <a href="{% url 'main:detail' post.id %}">....자세히</a>
                 <br>
             </div>

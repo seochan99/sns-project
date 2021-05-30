@@ -2,6 +2,13 @@
 {% load static %}
 
 {% block content %}
+<style>
+.edit{
+    text-align: right;
+    margin: auto;
+}
+
+</style>
 <nav class=nav>
     <ul class="nav__list">
         <li class="nav__btn"><a class="nav__link" href="{% url  'main:show' %}"><p></p><i class="fas fa-home fa-2x"></i></a></li>
@@ -20,6 +27,9 @@
 {% endif %}
 
 <p>{{post.body}}</p>
-<a href="{% url 'main:edit' post.id %}">수정하기</a>
-<a href="{% url 'main:delete' post.id %}">삭제하기</a>
+<div class="edit">
+    <a href="{% url 'main:edit' post.id %}" style="co">수정하기</a>
+    <a href="{% url 'main:delete' post.id %}">삭제하기</a>
+</div>
+
 {% endblock %}
