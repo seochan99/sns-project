@@ -8,6 +8,10 @@
     margin: auto;
 }
 
+img{
+    width: 30%;
+    height: 30%;
+}
 </style>
 <nav class=nav>
     <ul class="nav__list">
@@ -16,19 +20,19 @@
         <li class="nav__btn"><a class="nav__link" href="{% url 'main:photoMe'%}"><i class="far fa-image fa-2x"></i></a></li>
         <li class="nav__btn"><a class="nav__link" href="{% url 'main:profileMe'%}"><i class="far fa-user fa-2x"></i></a></li>
     </ul>
-</nav>
+</nav>`
 <h1>{{post.title}}</h1>
 작성자 : {{post.writer}}
 날짜 : {{post.pub_date}}
 <hr>
 <!-- if문 추가하기 -->
-{% if blog.image %}
-<p><img src="{{post.image.url}}" alt="사진"></p>
+{% if post.image %}
+<p style="text-align: center;"><img src="{{post.image.url}}" alt="사진"></p>
 {% endif %}
 
 <p>{{post.body}}</p>
 <div class="edit">
-    <a href="{% url 'main:edit' post.id %}" style="co">수정하기</a>
+    <a href="{% url 'main:edit' post.id %}">수정하기</a>
     <a href="{% url 'main:delete' post.id %}">삭제하기</a>
 </div>
 

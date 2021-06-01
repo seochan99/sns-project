@@ -28,14 +28,14 @@ def new(request):
     return render(request,'main/new.html')
 
 def create(request):
-
     new_post =Post()
     new_post.title = request.POST['title']
     new_post.writer = request.POST['writer']
     new_post.pub_date = timezone.now()
     new_post.body = request.POST['body']
+    new_post.image = request.FILES.get('image') #이미지 
     new_post.save()
-    return redirect('detail',new_post.id)   
+    return redirect('main:detail',new_post.id)   
 
 def edit(request, id):
     edit_Post = Post.objects.get(id=id)
@@ -47,11 +47,11 @@ def update(request,id):
     update_Post.writer = request.POST['writer']
     update_Post.pub_date = timezone.now()
     update_Post.body = request.POST['body']
-    update_Post.image = request.FILES['image']
+    # update_Post.image = request.FILES['image']
     update_Post.save()
-    return redirect('main/detail', update_Post.id)
+    return redirect('main:detail', update_Post.id)
 
 def delete(request, id):
     delete_Post = Post.objects.get(id=id) #모든 객체 가지고온다 
     delete_Post.delete() ## 삭제 ~ 
-    return redirect("main/posts") #삭제후 보여지는 페이지 이동 
+    return redirect("main:profileMe") #삭제후 보여지는 페이지 이동 
