@@ -1,4 +1,4 @@
-<nav class=nav>
+<nav class=nav__bar>
     <ul class="nav__list">
         <li class="nav__btn"><a class="nav__link" href="{% url  'show' %}"><p></p><i class="fas fa-home fa-2x"></i></a></li>
         <li class="nav__btn"><a class="nav__link" href="{% url 'introduceMe'%}"><i class="far fa-file fa-2x"></i></a></li>
@@ -6,3 +6,15 @@
         <li class="nav__btn"><a class="nav__link" href="{% url 'profileMe'%}"><i class="far fa-user fa-2x"></i></a></li>
     </ul>
 </nav>
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDrpodown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        {% if user.is_authenticated %}
+        <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+        {% else %}
+        <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
+        <li><a class="dropdown-item" href="{% url 'account_signup' %}">Signup</a></li>
+        {% endif %}
+    </ul>
+</li>

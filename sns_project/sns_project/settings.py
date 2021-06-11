@@ -27,6 +27,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main', #미리추가하면 안된당...
+    # 사이트 프레임워크, 사이트 기본 정보 설정가능 
+    'django.contrib.sites',
+    #allauth 관련 앱: 일반계정 관리, 소셜 계정 관리 
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +129,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 MEDIA_URL = '/media/'
+
+AUTHENTICATION_BACKENDS=[
+    #superuser 로그인 가능 
+    'django.contrib.auth.backends.ModelBackend',
+    #이메일 등의 로그인 가능 
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+# admin 페이지 관리 번ㄹ호, 단일서버 = 1 입력 
+STIE_ID = 1 
+
+#로그인 되면 이동하는 페이지 설정 
+LOGIN_REDIRECT_URL='/' #main page로 이동 

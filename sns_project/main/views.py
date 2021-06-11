@@ -30,7 +30,7 @@ def new(request):
 def create(request):
     new_post =Post()
     new_post.title = request.POST['title']
-    new_post.writer = request.POST['writer']
+    new_post.writer = request.user
     new_post.pub_date = timezone.now()
     new_post.body = request.POST['body']
     new_post.image = request.FILES.get('image') #이미지 
@@ -44,7 +44,7 @@ def edit(request, id):
 def update(request,id):
     update_Post = Post.objects.get(id=id)
     update_Post.title = request.POST['title']
-    update_Post.writer = request.POST['writer']
+    update_Post.writer = request.user
     update_Post.pub_date = timezone.now()
     update_Post.body = request.POST['body']
     # update_Post.image = request.FILES['image']
