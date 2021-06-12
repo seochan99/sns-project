@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -124,7 +125,7 @@ STATIC_ROOT = os.path.join(BASE_DIR,'/basic/static')
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
@@ -142,3 +143,5 @@ STIE_ID = 1
 
 #로그인 되면 이동하는 페이지 설정 
 LOGIN_REDIRECT_URL='/' #main page로 이동 
+
+

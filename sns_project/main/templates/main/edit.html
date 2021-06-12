@@ -7,7 +7,6 @@
 	<form action="{%url 'main:update' Post.id %}" method="Post">
 		{%csrf_token%}
 		<p>제목 : <input type="text" name="title" value ="{{Post.title}}"></p>
-		<p>작성자 : <input type="text" name="writer" value="{{Post.writer}}"></p>
 		<p>내용 : <textarea type="text" name="body" id="" cols="30" rows="10">{{Post.body}}</textarea></p>
 		<p>사진 : <input type="file" name ="image">{{Post.image}}</p>
 		
