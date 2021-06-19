@@ -26,10 +26,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main', #미리추가하면 안된당...
-    # 사이트 프레임워크, 사이트 기본 정보 설정가능 
+    'main',
     'django.contrib.sites',
-    #allauth 관련 앱: 일반계정 관리, 소셜 계정 관리 
     'allauth',
     'allauth.account',
     'allauth.socialaccount',

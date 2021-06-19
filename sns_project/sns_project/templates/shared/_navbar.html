@@ -1,7 +1,8 @@
 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="navbarDrpodown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        {% if user.is_authenticated %}
+        {% if user.is_authenticated %} 
+        <!-- 유저가 로그인 중일떄 -->
         <li><a class="dropdown-item" href="{% url 'users:mypage' %}">Mypage</a></li> 
         <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
         {% else %}
