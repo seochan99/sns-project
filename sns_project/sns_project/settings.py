@@ -136,8 +136,8 @@ AUTHENTICATION_BACKENDS=[
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-# admin 페이지 관리 번ㄹ호, 단일서버 = 1 입력 
-STIE_ID = 1 
+# admin 페이지 관리 번호, 단일서버 = 1 입력 
+SITE_ID = 1 
 
 #로그인 되면 이동하는 페이지 설정 
 LOGIN_REDIRECT_URL='/' #main page로 이동 
