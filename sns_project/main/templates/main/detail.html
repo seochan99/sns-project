@@ -62,7 +62,7 @@ img{
         작성자 : {{comment.writer}}<br>
         내용 : {{comment.content}}
         <br>
-        <a href="{%url 'main:comment_edit' post.id comment.id %}" style="float: right; margin-right: 10px;">수정하기</a>
+        <a href="{%url 'main:edit_comment' post.id comment.id %}" style="float: right; margin-right: 10px;">수정하기</a>
         <a href="{%url 'main:delete_Comment' comment.id %}" style="float: right; margin-right: 10px;">삭제하기</a>
         <hr>
     </div>

@@ -43,13 +43,13 @@ def edit(request, id):
     return render(request,"main/edit.html",{"Post":edit_Post})
 
 #댓글 수정하기 
-def comment_edit(request,post_id,com_id):
-    edit_post = Post.objects.get(id=post_id)
-    edit_comment = Comment.objects.get(id=com_id)
-    return render(request,'main/comment_edit.html',{'post':edit_post,'commnet':edit_comment})
+def edit_comment(request, post_id, com_id):
+    edit_post=Post.objects.get(id=post_id)
+    edit_comment=Comment.objects.get(id=com_id)
+    return render(request, 'main/edit_comment.html',{'post': edit_post, 'comment':edit_comment})
 
 
-# #댓글 업데이트 시키기
+#댓글 업데이트 시키기
 def update_comment(request,post_id,com_id):
     if request.method =='POST':
         post= get_object_or_404(Post,pk=post_id)
