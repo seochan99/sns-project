@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect, get_object_or_404
-from .models import Post 
+from .models import Post, Comment
 from django.utils import timezone
 
 
@@ -22,7 +22,8 @@ def home(request):
 
 def detail(request,id):
     post = get_object_or_404(Post,pk = id) #id로 각 개체 구분, post에 페이지 가져와서 저장
-    return render(request,'main/detail.html',{'post':post}) # 포스트가 페이지 가져옴 
+    all_comments = post.comments.all().order_by('-create_at')
+    return render(request,'main/detail.html',{'post':post, 'comments':all_comments})
 
 def new(request):
     return render(request,'main/new.html')
@@ -41,6 +42,24 @@ def edit(request, id):
     edit_Post = Post.objects.get(id=id)
     return render(request,"main/edit.html",{"Post":edit_Post})
 
+#댓글 수정하기 
+def comment_edit(request,post_id,com_id):
+    edit_post = Post.objects.get(id=post_id)
+    edit_comment = Comment.objects.get(id=com_id)
+    return render(request,'main/comment_edit.html',{'post':edit_post,'commnet':edit_comment})
+
+
+# #댓글 업데이트 시키기
+def update_comment(request,post_id,com_id):
+    if request.method =='POST':
+        post= get_object_or_404(Post,pk=post_id)
+        comment=Comment.objects.filter(pk=com_id)
+        curUser=request.user
+        com_content=request.POST.get('content')
+        comment.update(content=com_content,writer=curUser,post=post)
+    return redirect('main:detail',post_id)
+
+#업데이트
 def update(request,id):
     update_Post = Post.objects.get(id=id)
     update_Post.title = request.POST['title']
@@ -53,5 +72,19 @@ def update(request,id):
 
 def delete(request, id):
     delete_Post = Post.objects.get(id=id) #모든 객체 가지고온다 
-    delete_Post.delete() ## 삭제 ~ 
+    delete_Post.delete() # 삭제 ~ 
     return redirect("main:profileMe") #삭제후 보여지는 페이지 이동 
+
+#댓글 삭제 함수 
+def delete_Comment(request,com_id):
+    delete_comment = Comment.objects.get(id=com_id)
+    delete_comment.delete()
+    return redirect('main:profileMe')
+
+def create_comment(request, post_id):
+	if request.method == "POST":
+		post = get_object_or_404(Post, pk=post_id)
+		current_user = request.user
+		comment_content = request.POST.get('content')
+		Comment.objects.create(content=comment_content, writer=current_user, post=post)
+	return redirect('main:detail', post_id)    
