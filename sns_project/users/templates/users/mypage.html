@@ -2,6 +2,38 @@
 {% load static %}
 
 {% block content %}
+
+<style>
+    .follow{
+        margin: 20px;
+    }
+    .post_list
+    {
+        text-align: center;
+    }
+    .list_follow
+    {
+        margin: 10px;
+        font-size: 20px;
+        font-weight: 600;
+        color: wheat;
+    }
+    a:visited{
+        color: rgb(238, 171, 171);
+    }
+    a:link{
+        color : whitesmoke;
+        text-decoration: none;
+    }
+</style>
+<nav class=nav>
+    <ul class="nav__list">
+        <li class="nav__btn"><a class="nav__link" href="{% url  'main:show' %}"><p></p><i class="fas fa-home fa-2x"></i></a></li>
+        <li class="nav__btn"><a class="nav__link" href="{% url 'main:introduceMe'%}"><i class="far fa-file fa-2x"></i></a></li>
+        <li class="nav__btn"><a class="nav__link" href="{% url 'main:photoMe'%}"><i class="far fa-image fa-2x"></i></a></li>
+        <li class="nav__btn"><a class="nav__link" href="{% url 'main:profileMe'%}"><i class="fas fa-user fa-2x"></i></a></li>
+    </ul>
+</nav>
 <div class="container">
     <h1>{{user.username}}</h1>
     <!-- 다른 사람의 프로필에 들어온 경우에만 팔로/언팔 버튼 보임 -->
@@ -12,13 +44,31 @@
             <a href="{% url 'users:follow' user.id %}"><button type="button" class="btn btn-info">팔로우</button></a>
         {% endif %}
     {% endif %}
-    <div class="container">
+    <div class="container follow">
         <h3>팔로워 {{ user.profile.followers.count }}명 </h3>
+        <div class="list_follow">
+            {% for follower in user.profile.followers.all %}
+                <a href="{% url 'users:mypage' follower.user.id %}">{{ follower.user.username }}</a>
+            {% endfor %}
+        </div>            
+
+        <h3>팔로잉 {{ user.profile.followings.count }}명 </h3>
+        <div class="list_follow">
+        {% for following in user.profile.followings.all %}
+            <a href="{% url 'users:mypage' following.user.id %}">{{ following.user.username }}</a>
+        {% endfor %}
+        </div>
     </div>
-    <div>
+
+    
+    <div class="post_list"> 
+        <h3> {{user.username}}이 작성한 게시글</h3>
+        <div class="list_follow">
         {% for post in posts %}
+        
         <a href="{% url 'main:detail' post.id %}">{{post.title}}</a><hr>
         {% endfor %}
+        </div>
     </div>
 </div>
 {% endblock %}
