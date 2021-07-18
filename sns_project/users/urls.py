@@ -3,5 +3,6 @@ from . import views
 
 app_name ="users"
 urlpatterns=[
-    path('mypage/',views.mypage,name="mypage"),
+    path('mypage/<int:id>',views.mypage,name="mypage"),
+    path('follow<int:id>',views.follow, name="follow"),
 ] 
