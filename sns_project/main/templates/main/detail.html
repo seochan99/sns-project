@@ -11,7 +11,6 @@
     margin: 20px;
     margin-top: 30px;
 }
-
 img{
     width: 30%;
     height: 30%;
@@ -61,7 +60,7 @@ img{
 <div>
     {% for comment in comments %}
     <div>
-        작성자 : {{comment.writer}}<br>
+        작성자 : <a href="{% url 'users:mypage' post.writer.id %}">{{comment.writer}}</a><br>
         내용 : {{comment.content}}
         <br>
         <a href="{%url 'main:edit_comment' post.id comment.id %}" style="float: right; margin-right: 10px;">수정하기</a>
