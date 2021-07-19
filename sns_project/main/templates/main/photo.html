@@ -23,8 +23,11 @@ body {
 * {
   box-sizing: border-box;
 }
+.part1{
+  display: block;
+}
 </style>
-<nav class=nav>
+<nav class=nav__bar>
     <ul class="nav__list">
         <li class="nav__btn"><a class="nav__link" href="{% url  'main:show' %}"><p></p><i class="fas fa-home fa-2x"></i></a></li>
         <li class="nav__btn"><a class="nav__link" href="{% url 'main:introduceMe'%}"><i class="far fa-file fa-2x"></i></a></li>
@@ -33,7 +36,8 @@ body {
     </ul>
 </nav>
 
-<section class="part1" style="text-align: center; ">
+
+<section class="part1" style="text-align: center;">
     <div class="introduce_photo">
         <p style="font-weight: 600; font-size: larger; transform: translate(0,-20px);">
             저는 사진을 찍는것과 찍히는것을 되게 좋아하는데요!!!

@@ -26,3 +26,8 @@ body
     padding: 0px var(--horizontal-space);
 }
 
+
+
+.comment_form{
+    margin: 20px;
+}
