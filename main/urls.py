@@ -18,4 +18,6 @@ urlpatterns = [
     path('<str:post_id>/create_comment', create_comment, name="create_comment"),
     path('updateComment/<str:post_id>/<str:com_id>',update_comment, name="update_comment"),
     path('deleteComment/<str:com_id>',delete_Comment, name = "delete_Comment"),
+    path('like_toggle/<int:post_id>/',like_toggle,name="like_toggle"), #좋아요 기능 
+    path('dislike_toggle/<int:post_id>/',dislike_toggle,name="dislike_toggle"), #좋아요 기능 
 ]
